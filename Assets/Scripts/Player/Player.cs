@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(CapsuleCollider))]
 public class Player : MonoBehaviour
 {
     private PlayerInput _playerInput;
@@ -10,11 +12,17 @@ public class Player : MonoBehaviour
     private Collider _collider;
     [SerializeField]private float _speed;
     [SerializeField] private GameObject _t2;
-
+    [SerializeField] private float _turnSpeed = 360;
     public float Speed
     {
         get => _speed;
         private set => _speed = value;
+    }
+
+    public float TurnSpeed
+    {
+        get => _turnSpeed;
+        private set => _turnSpeed = value;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()

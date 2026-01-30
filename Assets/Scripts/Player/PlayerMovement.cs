@@ -14,6 +14,8 @@ public class PlayerMovement
         _characterController = characterController;
         _player = player;
         _playerInput = playerInput;
+        _speed = _player.Speed;
+        _turnSpeed = _player.Speed; 
     }
 
     public void Move()
@@ -26,6 +28,6 @@ public class PlayerMovement
         
         Quaternion targetRotation = Quaternion.LookRotation(_moveInput);
         _player.transform.rotation = Quaternion.RotateTowards(_player.transform.rotation, targetRotation, _turnSpeed * Time.deltaTime);
-        _characterController.Move(_player.transform.forward * 10 *Time.deltaTime );
+        _characterController.Move(_player.transform.forward * _speed *Time.deltaTime );
     }
 }
