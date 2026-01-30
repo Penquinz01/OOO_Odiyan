@@ -6,7 +6,10 @@ public class Player : MonoBehaviour
     private PlayerInput _playerInput;
     private CharacterController _characterController;
     private PlayerMovement _playerMovement;
+    private PlayerTransformation _playerTransformation;
+    private Collider _collider;
     [SerializeField]private float _speed;
+    [SerializeField] private GameObject _t2;
 
     public float Speed
     {
@@ -16,9 +19,12 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
+        _collider = GetComponent<Collider>();
         _playerInput = new PlayerInput();
         _characterController = GetComponent<CharacterController>();
         _playerMovement = new PlayerMovement(_characterController,this,_playerInput);
+        _playerTransformation = new PlayerTransformation(this, _t2,_collider);
+        
     }
 
     void Start()

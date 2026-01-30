@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class PlayerInput
 {
     MainControls _mainControls;
     public Vector2 _moveInput{get; private set;}
-    
 
     public PlayerInput()
     {
@@ -18,12 +18,14 @@ public class PlayerInput
         _mainControls.Enable();
         _mainControls.Player.Move.performed += Move;
         _mainControls.Player.Move.canceled += MoveCancel;
+        _mainControls.Player.Switch.started += Transform;
     }
 
     public void DisableControls()
     {
         _mainControls.Player.Move.performed -= Move;
         _mainControls.Player.Move.canceled -= MoveCancel;
+        _mainControls.Player.Switch.started -= Transform;
     }
 
     private void Move(InputAction.CallbackContext ctx)
@@ -35,4 +37,10 @@ public class PlayerInput
     {
         _moveInput = Vector2.zero;
     }
+
+    private void Transform(InputAction.CallbackContext cxt)
+    {
+        EventManager.Instance.InvokeTransformEvent();
+    }
+    
 }

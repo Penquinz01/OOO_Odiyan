@@ -7,6 +7,7 @@ public class PlayerMovement
     private PlayerInput _playerInput;
     private float _speed;
     private Vector2 _moveInput;
+    private float _turnSmoothVelocity = 0.25f;
 
     public PlayerMovement(CharacterController characterController, Player player, PlayerInput playerInput)
     {
@@ -22,9 +23,12 @@ public class PlayerMovement
         {
             return;
         }
-        Debug.Log(_moveInput);
-        float angle = Mathf.Atan2(_moveInput.y, _moveInput.x) * Mathf.Rad2Deg - 90.00f;
-        _player.transform.rotation = Quaternion.AngleAxis(-angle, Vector3.up);
+        if (_turnSmoothVelocity > 1)
+        {
+            _turnSmoothVelocity = 0 ;
+        }
+
+        _player.transform.rotation = Quaternion.Slerp(_player.transform.rotation,Quaternion.LookRotation(new Vector3(_moveInput.x, 0, _moveInput.y)),_turnSmoothVelocity);
         _characterController.Move(_player.transform.forward * 10 *Time.deltaTime );
     }
 }
