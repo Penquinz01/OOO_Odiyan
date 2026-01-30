@@ -1,16 +1,40 @@
 using UnityEngine;
+using UnityEngine.AI;
 
-public class EnemyStateMachine : MonoBehaviour
+public class EnemyStateMachine
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public States CurrentState{get; private set;}
+
+    public Idle _idle{get; private set;}
+    public Chasing _chase{get; private set;}
+    public Pattroling _pattrol{get; private set;}
+    private Enemy _enemy;
+    public EnemyStateMachine(Enemy enemy,NavMeshAgent navMeshAgent,EnemyPathManager pathManager)
     {
+        _enemy = enemy;
+        _idle = new Idle(this,enemy);
+        _chase = new Chasing(this,enemy,pathManager);
+        _pattrol = new Pattroling(this, enemy, pathManager);
+        
+        SwitchState(_idle);
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateState()
     {
-        
+        CurrentState?.UpdateState();
     }
+    public void SwitchState(States nextState)
+    {
+        if (CurrentState != null)
+        {
+            CurrentState.ExitState();
+        }
+
+        Debug.Log("The Current State is  :"+ nextState.GetType().ToString());
+        CurrentState = nextState;
+        CurrentState.EnterState();
+    }
+    
+    
 }
