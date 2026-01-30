@@ -6,8 +6,8 @@ public class PlayerMovement
     private Player _player;
     private PlayerInput _playerInput;
     private float _speed;
-    private Vector2 _moveInput;
-    private float _turnSmoothVelocity = 0.25f;
+    private Vector3 _moveInput;
+    private float _turnSpeed = 360f;
 
     public PlayerMovement(CharacterController characterController, Player player, PlayerInput playerInput)
     {
@@ -18,17 +18,14 @@ public class PlayerMovement
 
     public void Move()
     {
-        _moveInput = _playerInput._moveInput;
-        if (_moveInput == Vector2.zero)
+        _moveInput = new Vector3(_playerInput._moveInput.x,0,_playerInput._moveInput.y);
+        if (_moveInput == Vector3.zero)
         {
             return;
         }
-        if (_turnSmoothVelocity > 1)
-        {
-            _turnSmoothVelocity = 0 ;
-        }
-
-        _player.transform.rotation = Quaternion.Slerp(_player.transform.rotation,Quaternion.LookRotation(new Vector3(_moveInput.x, 0, _moveInput.y)),_turnSmoothVelocity);
+        
+        Quaternion targetRotation = Quaternion.LookRotation(_moveInput);
+        _player.transform.rotation = Quaternion.RotateTowards(_player.transform.rotation, targetRotation, _turnSpeed * Time.deltaTime);
         _characterController.Move(_player.transform.forward * 10 *Time.deltaTime );
     }
 }
