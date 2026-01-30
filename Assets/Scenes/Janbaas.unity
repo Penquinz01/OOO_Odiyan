@@ -206,8 +206,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000002980232, y: 0.00000001804683, z: -5.378374e-16, w: 1}
-  m_LocalPosition: {x: 0.35356, y: 1.05, z: -9.64644}
+  m_LocalRotation: {x: 0.38268346, y: -0.000000028761518, z: 0.000000011913411, w: 0.92387956}
+  m_LocalPosition: {x: 0.35356, y: 9.05, z: -7.64644}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -527,11 +527,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
   TrackerSettings:
     BindingMode: 4
-    PositionDamping: {x: 1, y: 1, z: 1}
+    PositionDamping: {x: 1, y: 0, z: 1}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 0, z: -10}
+  FollowOffset: {x: 0, y: 8, z: -8}
 --- !u!114 &1603105303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,8 +583,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603105300}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000002980232, y: 0.00000001804683, z: 5.144412e-16, w: 1}
-  m_LocalPosition: {x: 0.35356, y: 1.05, z: -9.64644}
+  m_LocalRotation: {x: 0.38268343, y: -0.000000020502174, z: -0.000000008026401, w: 0.92387956}
+  m_LocalPosition: {x: 0.35356, y: 9.05, z: -7.64644}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -716,6 +716,7 @@ GameObject:
   - component: {fileID: 2012214571}
   - component: {fileID: 2012214570}
   - component: {fileID: 2012214569}
+  - component: {fileID: 2012214574}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -843,6 +844,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2012214574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012214568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8ad0ac6d59e36c9945d584012d59ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
+  _speed: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
