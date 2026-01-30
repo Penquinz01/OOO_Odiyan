@@ -24,7 +24,7 @@ public class PlayerMovement
         }
         Debug.Log(_moveInput);
         float angle = Mathf.Atan2(_moveInput.y, _moveInput.x) * Mathf.Rad2Deg - 90.00f;
-        _player.transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
+        _player.transform.rotation = Quaternion.AngleAxis(-angle, Vector3.up);
         _characterController.Move(_player.transform.forward * 10 *Time.deltaTime );
     }
 }
