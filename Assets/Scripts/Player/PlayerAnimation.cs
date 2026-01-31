@@ -10,6 +10,6 @@ public class PlayerAnimation
 
     public void ChangeAnimation(int id)
     {
-        _animator.CrossFade(id,0.5f,0);
+        _animator.CrossFade(id,0.2f,0);
     }
 }
