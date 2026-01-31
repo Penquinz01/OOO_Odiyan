@@ -9,6 +9,7 @@ public class Pattroling:States
     private Transform[] _patrolPoints;
     private int _patrolPointsSize;
     private int _currentPatrolPointIndex;
+    private LayerMask _playerMask;
 
     public Pattroling(EnemyStateMachine stateMachine, Enemy enemy,EnemyPathManager pathManager)
     {
@@ -18,6 +19,7 @@ public class Pattroling:States
         _currentPatrolPointIndex = 0;
         _patrolPoints = _enemy.PatrolPoints;
         _patrolPointsSize = _patrolPoints.Length;
+        _playerMask = _enemy.PlayerMask;
     }
     
     public override void EnterState()
@@ -33,6 +35,17 @@ public class Pattroling:States
 
     public override void UpdateState()
     {
+        Collider[] cols = Physics.OverlapSphere(_enemy.transform.position, 5f, _playerMask);
+        foreach (Collider col in cols)
+        {
+            if (Physics.Raycast(_enemy.transform.position,
+                    (col.transform.position - _enemy.transform.position).normalized, out RaycastHit hit, 5f) &&
+                hit.collider.CompareTag("Player"))
+            {
+                _stateMachine.SwitchState(_stateMachine._chase);
+                return;
+            }
+        }
         if (Vector3.Distance(_enemy.transform.position, _patrolPoints[_currentPatrolPointIndex].transform.position) <
             5.5f)
         {
@@ -41,7 +54,7 @@ public class Pattroling:States
             {
                 _currentPatrolPointIndex = 0;
             }
-            _pathManager.ChangePath(_patrolPoints[_currentPatrolPointIndex]);
+            _stateMachine.SwitchState(_stateMachine._idle);
         }
     }
 }

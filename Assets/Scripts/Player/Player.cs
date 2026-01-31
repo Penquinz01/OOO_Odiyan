@@ -1,21 +1,24 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
-[RequireComponent(typeof(CapsuleCollider))]
+
 public class Player : MonoBehaviour
 {
     public static Player Instance;
     private PlayerInput _playerInput;
-    private CharacterController _characterController;
+    [SerializeField]private CharacterController _characterController;
+    [SerializeField] private CapsuleCollider _collider;
+    [SerializeField]private SkinnedMeshRenderer _playerRenderer;
     private PlayerMovement _playerMovement;
     private PlayerTransformation _playerTransformation;
-    private Collider _collider;
     [SerializeField]private float _speed;
     [SerializeField] private GameObject _t2;
     [SerializeField] private float _turnSpeed = 360;
     [SerializeField]private float _gravity = -9.81f;
-
+    private PlayerStateMachine _playerStateMachine;
+    private Animator _playerAnimator;
+    private PlayerAnimation _playerAnimation;
+    
     public float Gravity
     {
         get => _gravity;
@@ -36,22 +39,18 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        _collider = GetComponent<Collider>();
         _playerInput = new PlayerInput();
-        _characterController = GetComponent<CharacterController>();
         _playerMovement = new PlayerMovement(_characterController,this,_playerInput);
-        _playerTransformation = new PlayerTransformation(this, _t2,_collider);
-        
+        _playerTransformation = new PlayerTransformation(this, _t2, _collider,_playerRenderer);
+        _playerAnimator = GetComponent<Animator>();
+        _playerAnimation = new PlayerAnimation(_playerAnimator);
+        _playerStateMachine = new PlayerStateMachine(this,_playerInput,_playerMovement,_playerAnimation);
     }
 
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         _playerMovement.Move();
+        _playerStateMachine.UpdateState();
     }
 }

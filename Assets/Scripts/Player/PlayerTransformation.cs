@@ -5,9 +5,9 @@ public class PlayerTransformation
     private GameObject _t2;
     private Player _player;
     private bool _transformed;
-    private MeshRenderer _playerRenderer;
+    private SkinnedMeshRenderer _playerRenderer;
     private Collider _collider;
-    public PlayerTransformation(Player player,GameObject t2,Collider collider)
+    public PlayerTransformation(Player player,GameObject t2,Collider collider,SkinnedMeshRenderer playerRenderer)
     {
         _player = player;
         _t2 = t2;
@@ -15,7 +15,7 @@ public class PlayerTransformation
         EventManager.OnTransform += Transform;
         _t2.SetActive(false);
         _transformed = false;
-        _playerRenderer = _player.GetComponent<MeshRenderer>();
+        _playerRenderer = playerRenderer;
         _playerRenderer.enabled = true;
         _collider.enabled = true;
     }
