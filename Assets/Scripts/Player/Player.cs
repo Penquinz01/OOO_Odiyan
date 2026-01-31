@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player Instance;
+    [SerializeField] private float _sprintSpeed = 8f;
+    [SerializeField]private float crouchSpeed = 3f;
     private PlayerInput _playerInput;
     [SerializeField]private CharacterController _characterController;
     [SerializeField] private CapsuleCollider _collider;
@@ -28,6 +30,17 @@ public class Player : MonoBehaviour
     {
         get => _speed;
         private set => _speed = value;
+    }
+    public float SprintSpeed
+    {
+        get => _sprintSpeed;
+        private set => _sprintSpeed = value;
+    }
+
+    public float CrouchSpeed
+    {
+        get => crouchSpeed;
+        private set => crouchSpeed = value;
     }
 
     public float TurnSpeed

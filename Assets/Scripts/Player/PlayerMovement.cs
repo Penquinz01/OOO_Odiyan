@@ -9,6 +9,8 @@ public class PlayerMovement
     private Vector3 _moveInput;
     private float _turnSpeed = 360f;
     private float _gravity;
+    private float _sprintSpeed;
+    private float _crouchSpeed;
 
     public PlayerMovement(CharacterController characterController, Player player, PlayerInput playerInput)
     {
@@ -18,6 +20,8 @@ public class PlayerMovement
         _speed = _player.Speed;
         _turnSpeed = _player.TurnSpeed;
         _gravity = _player.Gravity;
+        _sprintSpeed = _player.SprintSpeed;
+        _crouchSpeed = _player.CrouchSpeed;
     }
 
     public void Move()
@@ -32,10 +36,12 @@ public class PlayerMovement
         {
             return;
         }
-        
+
+        float speed;
+        speed = _playerInput.IsSprinting ? _sprintSpeed: _speed;
         Quaternion targetRotation = Quaternion.LookRotation(_moveInput);
         _player.transform.rotation = Quaternion.RotateTowards(_player.transform.rotation, targetRotation, _turnSpeed * Time.deltaTime);
-        _characterController.Move(_player.transform.forward * _speed *Time.deltaTime + Vector3.up * yVelocity);
+        _characterController.Move(_player.transform.forward * speed *Time.deltaTime + Vector3.up * yVelocity);
     }
 
     public float GetVelocity()
