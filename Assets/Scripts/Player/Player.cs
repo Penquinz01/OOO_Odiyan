@@ -21,6 +21,26 @@ public class Player : MonoBehaviour
     private PlayerStateMachine _playerStateMachine;
     private Animator _playerAnimator;
     private PlayerAnimation _playerAnimation;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _walkSound;
+    [SerializeField] private AudioClip _runSound;
+
+    public AudioSource AudioSource
+    {
+        get => _audioSource;
+        private set => _audioSource = value;
+    }
+    public AudioClip WalkSound
+    {
+        get => _walkSound;
+        private set => _walkSound = value;
+    }
+
+    public AudioClip RunSound
+    {
+        get => _runSound;
+        private set => _runSound = value;
+    }
     
     public float Gravity
     {
@@ -61,6 +81,7 @@ public class Player : MonoBehaviour
         _playerAnimation = new PlayerAnimation(_playerAnimator);
         _playerStateMachine = new PlayerStateMachine(this,_playerInput,_playerMovement,_playerAnimation);
         _stag.gameObject.GetComponent<Stag>().GetVariables(_playerMovement);
+        //_audioSource = GetComponent<AudioSource>();
     }
 
 

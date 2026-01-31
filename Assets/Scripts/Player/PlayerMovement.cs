@@ -15,6 +15,9 @@ public class PlayerMovement
     private Camera _mainCamera;
     private float turnSmoothVelocity;
     private float turnSmoothTime = 0.1f;
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _walkSound;
+    [SerializeField] private AudioClip _runSound;
     
 
     public PlayerMovement(CharacterController characterController, Player player, PlayerInput playerInput)
@@ -28,6 +31,9 @@ public class PlayerMovement
         _sprintSpeed = _player.SprintSpeed;
         _crouchSpeed = _player.CrouchSpeed;
         _mainCamera = Camera.main;
+        _audioSource = _player.AudioSource;
+        _walkSound = _player.WalkSound;
+        _runSound = _player.RunSound;
     }
 
     public void Move()
@@ -41,6 +47,18 @@ public class PlayerMovement
         _moveInput = new Vector3(_playerInput._moveInput.x, 0, _playerInput._moveInput.y);
         float speed;
         speed = _playerInput.IsSprinting ? _sprintSpeed: _speed;
+        if (_audioSource != null) {        
+            if (!_audioSource.isPlaying && _moveInput.magnitude > 0.1f && !_playerInput.IsCrouching)
+            {
+                _audioSource.clip = _playerInput.IsSprinting ? _runSound : _walkSound;
+                _audioSource.Play();
+            }
+            else if (_moveInput.magnitude < 0.1f || (!_playerInput.IsSprinting && _audioSource.clip == _runSound) || (_playerInput.IsSprinting && _audioSource.clip == _walkSound) || _playerInput.IsCrouching)
+            {
+                _audioSource.Stop();
+            }
+        }
+
         if (_playerInput.IsCrouching)
         {
             speed = _crouchSpeed;
