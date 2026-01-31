@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,6 +11,7 @@ public class Pattroling:States
     private int _patrolPointsSize;
     private int _currentPatrolPointIndex;
     private LayerMask _playerMask;
+    private Transform _previousTarget = null;
 
     public Pattroling(EnemyStateMachine stateMachine, Enemy enemy,EnemyPathManager pathManager)
     {
@@ -24,6 +26,7 @@ public class Pattroling:States
     
     public override void EnterState()
     {
+        _currentPatrolPointIndex = GetClosestPatrolPointIndex();
         _pathManager.ChangeStopPoint(0f);
         _pathManager.ChangePath(_patrolPoints[_currentPatrolPointIndex]);
     }
@@ -35,11 +38,11 @@ public class Pattroling:States
 
     public override void UpdateState()
     {
-        Collider[] cols = Physics.OverlapSphere(_enemy.transform.position, 5f, _playerMask);
+        Collider[] cols = Physics.OverlapSphere(_enemy.transform.position, 15f, _playerMask);
         foreach (Collider col in cols)
         {
             if (Physics.Raycast(_enemy.transform.position,
-                    (col.transform.position - _enemy.transform.position).normalized, out RaycastHit hit, 5f) &&
+                    (col.transform.position - _enemy.transform.position).normalized, out RaycastHit hit, 15f,_playerMask) &&
                 hit.collider.CompareTag("Player"))
             {
                 _stateMachine.SwitchState(_stateMachine._chase);
@@ -56,5 +59,25 @@ public class Pattroling:States
             }
             _stateMachine.SwitchState(_stateMachine._idle);
         }
+    }
+    private int GetClosestPatrolPointIndex()
+    {
+        int closestIndex = 0;
+        float closestDistance = Mathf.Infinity;
+        if (_previousTarget == null)
+        {
+            _previousTarget = _patrolPoints[_currentPatrolPointIndex];
+        }
+        for (int i = 0; i < _patrolPointsSize; i++)
+        {
+            float distance = Vector3.Distance(_enemy.transform.position, _patrolPoints[i].position);
+            if (distance < closestDistance && _patrolPoints[i] != _previousTarget )
+            {
+                closestDistance = distance;
+                closestIndex = i;
+            }
+        }
+        _previousTarget = _patrolPoints[closestIndex];
+        return closestIndex;
     }
 }

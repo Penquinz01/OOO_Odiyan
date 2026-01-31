@@ -36,12 +36,12 @@ public class Idle:States
     {
         bool changed = false;
         yield return new WaitForSeconds(_idleTime);
-        Collider[] colliders = Physics.OverlapSphere(_enemy.gameObject.transform.position, 5f,_layerMask);
+        Collider[] colliders = Physics.OverlapSphere(_enemy.gameObject.transform.position, 10f,_layerMask);
         foreach (Collider collider in colliders)
         {
             if (Physics.Raycast(_enemy.transform.position,
                     (collider.gameObject.transform.position - _enemy.transform.position).normalized, out RaycastHit hit,
-                    5f) && hit.collider.gameObject.CompareTag("Player"))
+                    10f,_layerMask) && hit.collider.gameObject.CompareTag("Player"))
             {
                 _stateMachine.SwitchState(_stateMachine._chase);
                 changed = true;

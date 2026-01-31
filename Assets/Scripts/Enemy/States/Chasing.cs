@@ -17,13 +17,16 @@ public class Chasing:States
     }
     public override void EnterState()
     {
-        if (!GetPlayerTransform(ref _playerTransform))
+        if (Player.Instance == null)
         {
             _stateMachine.SwitchState(_stateMachine._idle);
             return;
         }
+
+        _pathManager.IncreaseSpeed();
+        
         _pathManager.ChangeStopPoint(4f);
-        _pathManager.ChangePath(_playerTransform);
+        _pathManager.ChangePath(Player.Instance.transform);
     }
 
     public override void ExitState()
@@ -33,24 +36,6 @@ public class Chasing:States
 
     public override void UpdateState()
     {
-        if (!GetPlayerTransform(ref _playerTransform))
-        {
-            _stateMachine.SwitchState(_stateMachine._idle);
-        }
     }
-
-    private bool GetPlayerTransform(ref Transform playerTransform)
-    {
-        Collider[] cols = Physics.OverlapSphere(_enemy.transform.position, 5f,_playerMask);
-        foreach (var col in cols)
-        {
-            if (Physics.Raycast(_enemy.transform.position, (col.transform.position - _enemy.transform.position).normalized,out RaycastHit hit,5f)&& hit.collider.CompareTag("Player"))
-            {
-                playerTransform = hit.transform;
-                return true;
-            }   
-        }
-
-        return false;
-    }
+    
 }
