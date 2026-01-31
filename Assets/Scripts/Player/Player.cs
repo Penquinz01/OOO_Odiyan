@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     public PlayerMovement _playerMovement { get; private set; }
     public PlayerTransformation _playerTransformation { get;private set; }
     [SerializeField]private float _speed;
-    [SerializeField] private GameObject _t2;
+    [SerializeField] private GameObject _bull;
+    [SerializeField] private GameObject _stag;
     [SerializeField] private float _turnSpeed = 360;
     [SerializeField]private float _gravity = -9.81f;
     private PlayerStateMachine _playerStateMachine;
@@ -55,10 +56,11 @@ public class Player : MonoBehaviour
         Instance = this;
         _playerInput = new PlayerInput();
         _playerMovement = new PlayerMovement(_characterController,this,_playerInput);
-        _playerTransformation = new PlayerTransformation(this, _t2, _collider,_playerRenderer);
+        _playerTransformation = new PlayerTransformation(this, _bull,_stag, _collider,_playerRenderer);
         _playerAnimator = GetComponent<Animator>();
         _playerAnimation = new PlayerAnimation(_playerAnimator);
         _playerStateMachine = new PlayerStateMachine(this,_playerInput,_playerMovement,_playerAnimation);
+        _stag.gameObject.GetComponent<Stag>().GetVariables(_playerMovement);
     }
 
 

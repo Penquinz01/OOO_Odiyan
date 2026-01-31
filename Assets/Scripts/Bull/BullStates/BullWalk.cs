@@ -30,6 +30,13 @@ public class BullWalk:States
 
     public override void UpdateState()
     {
-        
+        if(_playerInput.IsSprinting)
+        {
+            _stateMachine.SwitchState(_stateMachine._run);
+        }
+        else if(_playerMovement.GetVelocity() <0.01f)
+        {
+            _stateMachine.SwitchState(_stateMachine._idle);
+        }
     }
 }

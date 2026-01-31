@@ -25,7 +25,7 @@ public class Bull : MonoBehaviour
         private set { _runSpeed = value; }
     }
 
-    private void Start()
+    private void Awake()
     {
         _playerMovement = _player._playerMovement;
         _playerInput = _player._playerInput;
@@ -43,8 +43,8 @@ public class Bull : MonoBehaviour
     private void OnDisable()
     {
         CurrentlyActive = false;
-        _playerTransformation.Transform();
-        _playerMovement.ResetSpeed();
+        _playerTransformation?.Transform();
+        _playerMovement?.ResetSpeed();
     }
 
     private void Update()

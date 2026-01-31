@@ -30,7 +30,7 @@ public class BullGallop:States
 
     public override void UpdateState()
     {
-        if (_playerMovement.GetVelocity() <= _bull.WalkSpeed)
+        if (_playerMovement.GetVelocity() <= _bull.WalkSpeed && !_playerInput.IsSprinting)
         {
             _stateMachine.SwitchState(_stateMachine._walk);
         }

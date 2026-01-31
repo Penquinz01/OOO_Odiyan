@@ -30,6 +30,7 @@ public class BullStateMachine
         }
         CurrentState = newState;
         CurrentState.EnterState();
+        Debug.Log("Current Bull State : "+ CurrentState.GetType().Name);
     }
 
     private void Attack()

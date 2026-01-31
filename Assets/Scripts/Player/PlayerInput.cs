@@ -25,6 +25,7 @@ public class PlayerInput
         _mainControls.Player.Sprint.started += SprintStart;
         _mainControls.Player.Sprint.canceled += SprintCancel;
         _mainControls.Player.Crouch.started += ToggleCrouch;
+        _mainControls.Player.Attack.started += AttackTrigger;
     }
     
 
@@ -36,6 +37,7 @@ public class PlayerInput
         _mainControls.Player.Sprint.started -= SprintStart;
         _mainControls.Player.Sprint.canceled -= SprintCancel;
         _mainControls.Player.Crouch.started -= ToggleCrouch;
+        _mainControls.Player.Attack.started -= AttackTrigger;
         _mainControls.Disable();
     }
 

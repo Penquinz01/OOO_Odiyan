@@ -39,7 +39,7 @@ public class BullAttack:States
     private IEnumerator EndAttack()
     {
         _animator.CrossFade(AttackAnimationId, 0.1f,0);
-        yield return new WaitForSeconds(31f);
+        yield return new WaitForSeconds(1.5f);
         _stateMachine.SwitchState(_stateMachine._idle);
     }
 }

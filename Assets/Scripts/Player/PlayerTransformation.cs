@@ -2,18 +2,20 @@ using UnityEngine;
 
 public class PlayerTransformation
 {
-    private GameObject _t2;
+    private GameObject _bull;
+    private GameObject _stag;
     private Player _player;
     private bool _transformed;
     private SkinnedMeshRenderer _playerRenderer;
     private Collider _collider;
-    public PlayerTransformation(Player player,GameObject t2,Collider collider,SkinnedMeshRenderer playerRenderer)
+    GameObject transformy;
+    public PlayerTransformation(Player player,GameObject bull,GameObject stag,Collider collider,SkinnedMeshRenderer playerRenderer)
     {
         _player = player;
-        _t2 = t2;
+        _bull = bull;
+        _stag = stag;
         _collider = collider;
         EventManager.OnTransform += Transform;
-        _t2.SetActive(false);
         _transformed = false;
         _playerRenderer = playerRenderer;
         _playerRenderer.enabled = true;
@@ -24,13 +26,14 @@ public class PlayerTransformation
     {
         if (_transformed)
         {
-            _t2.SetActive(false);
+            transformy.SetActive(false);
             _playerRenderer.enabled = true;
             _collider.enabled = true;
         }
         else
         {
-            _t2.SetActive(true);
+            transformy = Random.Range(0,2) == 0 ? _bull : _stag; 
+            transformy.SetActive(true);
             _playerRenderer.enabled = false;
             _collider.enabled = false;
         }

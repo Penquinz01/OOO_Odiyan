@@ -30,8 +30,7 @@ public class EnemyStateMachine
         {
             CurrentState.ExitState();
         }
-
-        Debug.Log("The Current State is  :"+ nextState.GetType().ToString());
+        
         CurrentState = nextState;
         CurrentState.EnterState();
     }
