@@ -1,5 +1,5 @@
 *.anim merge=unityyamlmerge eol=lf
-*.asset merge=unityyamlmerge eol=lf
+*.asset filter=lfs diff=lfs merge=lfs -text
 *.controller merge=unityyamlmerge eol=lf
 *.mat merge=unityyamlmerge eol=lf
 *.meta merge=unityyamlmerge eol=lf
