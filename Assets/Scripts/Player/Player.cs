@@ -7,12 +7,12 @@ public class Player : MonoBehaviour
     public static Player Instance;
     [SerializeField] private float _sprintSpeed = 8f;
     [SerializeField]private float crouchSpeed = 3f;
-    private PlayerInput _playerInput;
+    public PlayerInput _playerInput { get; private set; }
     [SerializeField]private CharacterController _characterController;
     [SerializeField] private CapsuleCollider _collider;
     [SerializeField]private SkinnedMeshRenderer _playerRenderer;
-    private PlayerMovement _playerMovement;
-    private PlayerTransformation _playerTransformation;
+    public PlayerMovement _playerMovement { get; private set; }
+    public PlayerTransformation _playerTransformation { get;private set; }
     [SerializeField]private float _speed;
     [SerializeField] private GameObject _t2;
     [SerializeField] private float _turnSpeed = 360;

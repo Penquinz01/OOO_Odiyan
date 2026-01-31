@@ -20,7 +20,7 @@ public class PlayerTransformation
         _collider.enabled = true;
     }
 
-    private void Transform()
+    public void Transform()
     {
         if (_transformed)
         {

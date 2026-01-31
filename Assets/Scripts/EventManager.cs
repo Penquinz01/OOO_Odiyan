@@ -6,6 +6,8 @@ public class EventManager : MonoBehaviour
     public static EventManager Instance;
 
     public static event Action OnTransform;
+    public static event Action AttackFinished;
+    public static event Action OnAttack;
 
     void Awake()
     {
@@ -22,4 +24,14 @@ public class EventManager : MonoBehaviour
     {
        OnTransform?.Invoke();
     }
+    public void InvokeAttackFinishedEvent()
+    {
+        AttackFinished?.Invoke();
+    }
+
+    public void InvokeOnAttackEvent()
+    {
+        OnAttack?.Invoke();
+    }
+    
 }

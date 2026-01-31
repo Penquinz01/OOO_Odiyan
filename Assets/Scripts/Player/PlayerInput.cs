@@ -8,6 +8,7 @@ public class PlayerInput
     public Vector2 _moveInput{get; private set;}
     public bool IsSprinting{get; private set;}
     public bool IsCrouching {get; private set;}
+    
 
     public PlayerInput()
     {
@@ -64,6 +65,11 @@ public class PlayerInput
     private void ToggleCrouch(InputAction.CallbackContext cxt)
     {
         IsCrouching = !IsCrouching;
+    }
+
+    private void AttackTrigger(InputAction.CallbackContext cxt)
+    {
+        EventManager.Instance.InvokeOnAttackEvent();
     }
     
 }

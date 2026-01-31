@@ -58,4 +58,15 @@ public class PlayerMovement
     {
         return _characterController.velocity.magnitude;
     }
+
+    public void ChangeSpeed(float _walkSpeed, float _runSpeed)
+    {
+        _speed = _walkSpeed;
+        _sprintSpeed = _runSpeed;
+    }
+    public void ResetSpeed()
+    {
+        _speed = _player.Speed;
+        _sprintSpeed = _player.SprintSpeed;
+    }
 }
