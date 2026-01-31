@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerRun:States
+public class PlayerCrouchWalking:States
 {
     private PlayerAnimation _playerAnimation;
     private PlayerMovement _playerMovement;
@@ -8,10 +8,9 @@ public class PlayerRun:States
     private Player _player;
     private PlayerStateMachine _playerStateMachine;
     private PlayerInput _playerInput;
-    
-    private static int RunAnimationId = Animator.StringToHash("Running");
-    
-    public PlayerRun(PlayerStateMachine playerStateMachine,PlayerMovement playerMovement,Player player,PlayerAnimation playerAnimation,PlayerInput playerInput)
+
+    private static int CrouchWalkingAnimationId = Animator.StringToHash("Crouched Walking");
+    public PlayerCrouchWalking(PlayerStateMachine playerStateMachine,PlayerMovement playerMovement,Player player,PlayerAnimation playerAnimation,PlayerInput playerInput)
     {
         _playerStateMachine = playerStateMachine;
         _playerMovement = playerMovement;
@@ -21,27 +20,20 @@ public class PlayerRun:States
     }
     public override void EnterState()
     {
-        _playerAnimation.ChangeAnimation(RunAnimationId);
+        _playerAnimation.ChangeAnimation(CrouchWalkingAnimationId);
     }
 
     public override void ExitState()
     {
-       
+        
     }
 
     public override void UpdateState()
     {
-        if (_playerInput._moveInput == Vector2.zero)
+        if (!_playerInput.IsCrouching || _playerInput._moveInput == Vector2.zero)
         {
             _playerStateMachine.SwitchState(_playerStateMachine._idle);
         }
-        if (_playerInput.IsCrouching)
-        {
-            _playerStateMachine.SwitchState(_playerStateMachine._crouchWalking);
-        }
-        if (_playerMovement.GetVelocity() < 5f)
-        {
-            _playerStateMachine.SwitchState(_playerStateMachine._walk);
-        }
+        
     }
 }

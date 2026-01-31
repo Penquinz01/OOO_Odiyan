@@ -7,6 +7,7 @@ public class PlayerInput
     MainControls _mainControls;
     public Vector2 _moveInput{get; private set;}
     public bool IsSprinting{get; private set;}
+    public bool IsCrouching {get; private set;}
 
     public PlayerInput()
     {
@@ -22,6 +23,7 @@ public class PlayerInput
         _mainControls.Player.Switch.started += Transform;
         _mainControls.Player.Sprint.started += SprintStart;
         _mainControls.Player.Sprint.canceled += SprintCancel;
+        _mainControls.Player.Crouch.started += ToggleCrouch;
     }
     
 
@@ -32,6 +34,7 @@ public class PlayerInput
         _mainControls.Player.Switch.started -= Transform;
         _mainControls.Player.Sprint.started -= SprintStart;
         _mainControls.Player.Sprint.canceled -= SprintCancel;
+        _mainControls.Player.Crouch.started -= ToggleCrouch;
         _mainControls.Disable();
     }
 
@@ -57,6 +60,10 @@ public class PlayerInput
     private void Transform(InputAction.CallbackContext cxt)
     {
         EventManager.Instance.InvokeTransformEvent();
+    }
+    private void ToggleCrouch(InputAction.CallbackContext cxt)
+    {
+        IsCrouching = !IsCrouching;
     }
     
 }

@@ -39,6 +39,10 @@ public class PlayerMovement
 
         float speed;
         speed = _playerInput.IsSprinting ? _sprintSpeed: _speed;
+        if (_playerInput.IsCrouching)
+        {
+            speed = _crouchSpeed;
+        }
         Quaternion targetRotation = Quaternion.LookRotation(_moveInput);
         _player.transform.rotation = Quaternion.RotateTowards(_player.transform.rotation, targetRotation, _turnSpeed * Time.deltaTime);
         _characterController.Move(_player.transform.forward * speed *Time.deltaTime + Vector3.up * yVelocity);

@@ -35,6 +35,11 @@ public class PlayerWalk:States
         {
             _playerStateMachine.SwitchState(_playerStateMachine._idle);
         }
+
+        if (_playerInput.IsCrouching)
+        {
+            _playerStateMachine.SwitchState(_playerStateMachine._crouchWalking);
+        }
         else if(_playerMovement.GetVelocity() > 5f)
         {
             _playerStateMachine.SwitchState(_playerStateMachine._run);
