@@ -26,14 +26,13 @@ public class PlayerTransformation
     {
         if (_transformed)
         {
-            transformy.SetActive(false);
+            _bull.SetActive(false);
             _playerRenderer.enabled = true;
             _collider.enabled = true;
         }
         else
         {
-            transformy = Random.Range(0,2) == 0 ? _bull : _stag; 
-            transformy.SetActive(true);
+            _bull.SetActive(true);
             _playerRenderer.enabled = false;
             _collider.enabled = false;
         }
