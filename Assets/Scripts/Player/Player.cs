@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Instance = this;
         _playerInput = new PlayerInput();
         _playerMovement = new PlayerMovement(_characterController,this,_playerInput);

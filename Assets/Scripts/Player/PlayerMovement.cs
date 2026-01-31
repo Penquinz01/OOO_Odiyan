@@ -1,3 +1,4 @@
+using Unity.Mathematics.Geometry;
 using UnityEngine;
 
 public class PlayerMovement
@@ -11,6 +12,10 @@ public class PlayerMovement
     private float _gravity;
     private float _sprintSpeed;
     private float _crouchSpeed;
+    private Camera _mainCamera;
+    private float turnSmoothVelocity;
+    private float turnSmoothTime = 0.1f;
+    
 
     public PlayerMovement(CharacterController characterController, Player player, PlayerInput playerInput)
     {
@@ -22,6 +27,7 @@ public class PlayerMovement
         _gravity = _player.Gravity;
         _sprintSpeed = _player.SprintSpeed;
         _crouchSpeed = _player.CrouchSpeed;
+        _mainCamera = Camera.main;
     }
 
     public void Move()
@@ -31,7 +37,8 @@ public class PlayerMovement
         {
             yVelocity = 0;
         }
-        _moveInput = new Vector3(_playerInput._moveInput.x,0,_playerInput._moveInput.y);
+
+        _moveInput = new Vector3(_playerInput._moveInput.x, 0, _playerInput._moveInput.y);
         if (_moveInput == Vector3.zero)
         {
             return;
@@ -43,9 +50,13 @@ public class PlayerMovement
         {
             speed = _crouchSpeed;
         }
-        Quaternion targetRotation = Quaternion.LookRotation(_moveInput);
-        _player.transform.rotation = Quaternion.RotateTowards(_player.transform.rotation, targetRotation, _turnSpeed * Time.deltaTime);
-        _characterController.Move(_player.transform.forward * speed *Time.deltaTime + Vector3.up * yVelocity);
+        float angle = Mathf.Atan2(_moveInput.x, _moveInput.z) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
+        float targetAngle = Mathf.SmoothDampAngle(_player.transform.eulerAngles.y, angle, ref turnSmoothVelocity,
+            turnSmoothTime);
+        //Quaternion targetRotation = Quaternion.LookRotation(_moveInput);
+        //_player.transform.rotation = Quaternion.RotateTowards(_player.transform.rotation, targetRotation, _turnSpeed * Time.deltaTime);
+        _player.transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+        _characterController.Move(_player.transform.forward * speed *Time.deltaTime + Vector3.up * yVelocity*Time.deltaTime);
     }
 
     public float GetVelocity()
