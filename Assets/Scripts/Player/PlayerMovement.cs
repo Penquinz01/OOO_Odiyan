@@ -39,11 +39,6 @@ public class PlayerMovement
         }
 
         _moveInput = new Vector3(_playerInput._moveInput.x, 0, _playerInput._moveInput.y);
-        if (_moveInput == Vector3.zero)
-        {
-            return;
-        }
-
         float speed;
         speed = _playerInput.IsSprinting ? _sprintSpeed: _speed;
         if (_playerInput.IsCrouching)
@@ -56,7 +51,7 @@ public class PlayerMovement
         //Quaternion targetRotation = Quaternion.LookRotation(_moveInput);
         //_player.transform.rotation = Quaternion.RotateTowards(_player.transform.rotation, targetRotation, _turnSpeed * Time.deltaTime);
         _player.transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-        _characterController.Move(_player.transform.forward * speed *Time.deltaTime + Vector3.up * yVelocity*Time.deltaTime);
+        _characterController.Move(_player.transform.forward * speed *Time.deltaTime  * _moveInput.magnitude+ Vector3.up * yVelocity*Time.deltaTime);
     }
 
     public float GetVelocity()
