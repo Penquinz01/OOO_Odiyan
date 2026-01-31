@@ -37,4 +37,9 @@ public class PlayerMovement
         _player.transform.rotation = Quaternion.RotateTowards(_player.transform.rotation, targetRotation, _turnSpeed * Time.deltaTime);
         _characterController.Move(_player.transform.forward * _speed *Time.deltaTime + Vector3.up * yVelocity);
     }
+
+    public float GetVelocity()
+    {
+        return _characterController.velocity.magnitude;
+    }
 }
