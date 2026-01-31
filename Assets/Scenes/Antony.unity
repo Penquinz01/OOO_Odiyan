@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0, g: 0.121568635, b: 0.41960788, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.004
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -109378,6 +109378,10 @@ PrefabInstance:
     - target: {fileID: 1681181384972538509, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
       propertyPath: m_Name
       value: Player+Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762212831659310838, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
+      propertyPath: _gravity
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 3510760748414302642, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
       propertyPath: Lens.FieldOfView
