@@ -8,7 +8,7 @@ public class EnemyChasing : States
     private NavMeshAgent _agent;
     private Animator _animator;
     
-    private float _attackRange = 2f;
+    private float _attackRange = 3f;
     private float _chaseRange = 20f;
     private float _updatePathInterval = 0.5f;
     private float _pathUpdateTimer;
