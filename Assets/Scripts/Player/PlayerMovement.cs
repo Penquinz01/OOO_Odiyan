@@ -51,7 +51,7 @@ public class PlayerMovement
         //Quaternion targetRotation = Quaternion.LookRotation(_moveInput);
         //_player.transform.rotation = Quaternion.RotateTowards(_player.transform.rotation, targetRotation, _turnSpeed * Time.deltaTime);
         _player.transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-        _characterController.Move(_player.transform.forward * speed *Time.deltaTime  * _moveInput.magnitude+ Vector3.up * yVelocity);
+        _characterController.Move(_player.transform.forward * speed *Time.deltaTime  * _moveInput.magnitude+ Vector3.up * yVelocity*Time.deltaTime);
     }
 
     public float GetVelocity()
