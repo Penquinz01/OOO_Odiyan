@@ -1216,6 +1216,14 @@ PrefabInstance:
       propertyPath: _stag
       value: 
       objectReference: {fileID: 7155524934428709940}
+    - target: {fileID: 8153398201505396500, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
+      propertyPath: _gravity
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470075479619869973, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6046493483598592495, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}

@@ -10,7 +10,7 @@ public class EnemyAttacking : States
     
     private float _attackCooldown = 1.5f;
     private float _attackTimer;
-    private float _attackRange = 2.5f;
+    private float _attackRange = 3.5f;
     private bool _hasAttacked;
     
     private static readonly int AttackAnimationId = Animator.StringToHash("Attack");
