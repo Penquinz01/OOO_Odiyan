@@ -20,10 +20,19 @@ public class Player : MonoBehaviour
     [SerializeField]private float _gravity = -9.81f;
     private PlayerStateMachine _playerStateMachine;
     private Animator _playerAnimator;
-    private PlayerAnimation _playerAnimation;
+    public PlayerAnimation _playerAnimation { get; private set; }
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _walkSound;
     [SerializeField] private AudioClip _runSound;
+    [SerializeField] private GameObject _SmokeEffect;
+
+    private static readonly int TransformAnimationId = Animator.StringToHash("Transform");
+
+    public GameObject SmokeEffect
+    {
+        get => _SmokeEffect;
+        set => _SmokeEffect = value;
+    }
 
     public AudioSource AudioSource
     {
@@ -82,6 +91,8 @@ public class Player : MonoBehaviour
         _playerStateMachine = new PlayerStateMachine(this,_playerInput,_playerMovement,_playerAnimation);
         _stag.gameObject.GetComponent<Stag>().GetVariables(_playerMovement);
         //_audioSource = GetComponent<AudioSource>();
+        EventManager.OnSmoke += SmokeGenerate;
+        EventManager.OnTransform += Transform;
     }
 
 
@@ -90,4 +101,20 @@ public class Player : MonoBehaviour
         _playerMovement.Move();
         _playerStateMachine.UpdateState();
     }
+
+    public void SmokeGenerate()
+    {
+        Instantiate(_SmokeEffect, transform.position, Quaternion.identity);
+    }
+
+    private void Transform()
+    {
+        _playerAnimation.ChangeAnimation(TransformAnimationId);
+    }
+
+    public void Transforming()
+    {
+        _playerTransformation.Transform();
+    }
+    
 }

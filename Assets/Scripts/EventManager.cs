@@ -8,6 +8,7 @@ public class EventManager : MonoBehaviour
     public static event Action OnTransform;
     public static event Action AttackFinished;
     public static event Action OnAttack;
+    public static event Action OnSmoke;
 
     void Awake()
     {
@@ -32,6 +33,11 @@ public class EventManager : MonoBehaviour
     public void InvokeOnAttackEvent()
     {
         OnAttack?.Invoke();
+    }
+
+    public void InvokeSmokeEvent()
+    {
+        OnSmoke?.Invoke();
     }
     
 }

@@ -9,21 +9,23 @@ public class PlayerTransformation
     private SkinnedMeshRenderer _playerRenderer;
     private Collider _collider;
     GameObject transformy;
+    GameObject smokeEffect;
     public PlayerTransformation(Player player,GameObject bull,GameObject stag,Collider collider,SkinnedMeshRenderer playerRenderer)
     {
         _player = player;
         _bull = bull;
         _stag = stag;
         _collider = collider;
-        EventManager.OnTransform += Transform;
         _transformed = false;
         _playerRenderer = playerRenderer;
         _playerRenderer.enabled = true;
         _collider.enabled = true;
+        smokeEffect = _player.SmokeEffect;
     }
 
     public void Transform()
     {
+        _player.SmokeGenerate();
         if (_transformed)
         {
             _bull.SetActive(false);

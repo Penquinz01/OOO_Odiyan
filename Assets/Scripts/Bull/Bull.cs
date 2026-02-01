@@ -59,6 +59,6 @@ public class Bull : MonoBehaviour
     private IEnumerator EndOfBull()
     {
         yield return new WaitForSeconds(_timer);
-        this.enabled = false;
+        gameObject.SetActive(false);
     }
 }

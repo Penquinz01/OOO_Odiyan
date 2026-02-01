@@ -30,7 +30,7 @@ public class BullIdle:States
 
     public override void UpdateState()
     {
-        if((_playerMovement.GetVelocity() > 0 && _playerMovement.GetVelocity() <= _bull.WalkSpeed)|| _playerInput._moveInput != Vector2.zero)
+        if(_playerInput._moveInput != Vector2.zero)
         {
             _stateMachine.SwitchState(_stateMachine._walk);
         }
