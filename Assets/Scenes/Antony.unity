@@ -35555,8 +35555,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Vazhath\xD8ttam."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3b61d72abba51b54dbe658a4d83c2b48, type: 2}
-  m_sharedMaterial: {fileID: 8058694421772806103, guid: 3b61d72abba51b54dbe658a4d83c2b48, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b2707939a0e0d984e81b902ebcdde44b, type: 2}
+  m_sharedMaterial: {fileID: 8058694421772806103, guid: b2707939a0e0d984e81b902ebcdde44b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -92663,8 +92663,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: press any key to play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3b61d72abba51b54dbe658a4d83c2b48, type: 2}
-  m_sharedMaterial: {fileID: 8058694421772806103, guid: 3b61d72abba51b54dbe658a4d83c2b48, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b2707939a0e0d984e81b902ebcdde44b, type: 2}
+  m_sharedMaterial: {fileID: 8058694421772806103, guid: b2707939a0e0d984e81b902ebcdde44b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -260828,7 +260828,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3c787ee1f12fc1f4f8308ed88d0e94a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9cf77358991af9345badfb67c70934aa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -312904,7 +312904,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: a1cd421667e91164a9a5a047319174dc, type: 3}
+  m_Resource: {fileID: 8300000, guid: fc2da5891303a744f811b3d63b36c312, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
