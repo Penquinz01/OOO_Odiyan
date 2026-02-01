@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Collections;
 
 
 public class Player : MonoBehaviour
@@ -26,6 +27,8 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip _walkSound;
     [SerializeField] private AudioClip _runSound;
     [SerializeField] private GameObject _SmokeEffect;
+    [SerializeField] private GameObject uiimage;
+    private MaskImage uiimg;
     public bool _isBullNow { get; private set; } = false;
 
     private static readonly int TransformAnimationId = Animator.StringToHash("Transform");
@@ -97,6 +100,7 @@ public class Player : MonoBehaviour
         //_audioSource = GetComponent<AudioSource>();
         EventManager.OnSmoke += SmokeGenerate;
         EventManager.OnTransform += Transform;
+        uiimg=uiimage.GetComponent<MaskImage>();
     }
 
 
@@ -123,6 +127,7 @@ public class Player : MonoBehaviour
     public void ToggleBullState()
     {
         _isBullNow = !_isBullNow;
+        uiimg.onUI();
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -148,12 +153,14 @@ public class Player : MonoBehaviour
                 if (key._isRightKey)
                 {
                     //EventManager.InvokeRightKeyEvent();
+                    StartCoroutine(UiManager.Instance.ShowKeyText(true));
                     hasKey = true;
                     Debug.Log("Right Key Collected");
                 }
                 else
                 {
                     //EventManager.InvokeFalseKeyEvent();
+                    StartCoroutine(UiManager.Instance.ShowKeyText(false));
                     Debug.Log("Wrong Key Collected");
                 }
                 Destroy(other.gameObject);
@@ -176,7 +183,14 @@ public class Player : MonoBehaviour
     {
         UiManager.Instance.ShowDeathScreen();  
         _playerDeath.SetActive(true);
-        Destroy(gameObject);        
+        //Destroy(gameObject);   
+        StartCoroutine(RestartLevelCoroutine(3f));
+    }
+
+    private IEnumerator RestartLevelCoroutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
     
 }

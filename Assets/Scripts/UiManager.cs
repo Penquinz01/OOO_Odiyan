@@ -2,14 +2,15 @@ using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class UiManager : MonoBehaviour
 {
     private Animator _animator;
     private MainControls _mainControls;
-    [SerializeField] private TextMeshProUGUI keyText;
-    [SerializeField] private string rightKey = "Right Key";
-    [SerializeField] private string wrongKey = "Wrong Key";
+    [SerializeField] private TextMeshProUGUI _keyText;
+    [SerializeField] private string _rightKey = "Right Key";
+    [SerializeField] private string _wrongKey = "Wrong Key";
     [SerializeField] private Image _deathScreen;
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class UiManager : MonoBehaviour
         _mainControls.Enable();
         _mainControls.UI.Enter.started += SkiptoNext;
         _deathScreen.gameObject.SetActive(false);
+        _keyText.gameObject.SetActive(false);
     }
     private void SkiptoNext(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
@@ -37,7 +39,7 @@ public class UiManager : MonoBehaviour
         {
             if (_instance == null)
             {
-                _instance = FindObjectOfType<UiManager>();
+                _instance = FindFirstObjectByType<UiManager>();
                 if (_instance == null)
                 {
                     GameObject go = new GameObject("UiManager");
@@ -46,6 +48,21 @@ public class UiManager : MonoBehaviour
             }
             return _instance;
         }
+    }
+
+    public IEnumerator ShowKeyText(bool isRightKey)
+    {
+        _keyText.gameObject.SetActive(true);
+        if (isRightKey)
+        {
+            _keyText.text = _rightKey;
+        }
+        else
+        {
+            _keyText.text = _wrongKey;
+        }
+        yield return new WaitForSeconds(2f);
+        _keyText.gameObject.SetActive(false);
     }
     public void ShowDeathScreen()
     {
