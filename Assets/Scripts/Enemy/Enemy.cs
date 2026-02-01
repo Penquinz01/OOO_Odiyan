@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     
     [Header("Death")]
     [SerializeField]private GameObject _deathEffect;
+    [SerializeField]private Transform _deathSpawnPoint;
     
     public float Damage => _damage;
     public float Health => _health;
@@ -67,7 +68,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        Instantiate(_deathEffect, transform.position, Quaternion.identity);
+        Instantiate(_deathEffect, _deathSpawnPoint.position, Quaternion.identity);
         // Handle death (play animation, disable, destroy, etc.)
         Destroy(gameObject);
     }

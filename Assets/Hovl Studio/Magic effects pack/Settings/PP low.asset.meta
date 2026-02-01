@@ -1,15 +1,8 @@
 fileFormatVersion: 2
-guid: 70629691e8eede744b1c85c9ddcc4bc4
+guid: acb895188e54d60e49eccd834b4d6a32
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 11400000
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 247933
-  packageName: Magic Effects FREE
-  packageVersion: 1.6
-  assetPath: Assets/Hovl Studio/Magic effects pack/Settings/PP low.asset
-  uploadId: 762116

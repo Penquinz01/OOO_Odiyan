@@ -1,14 +1,7 @@
 fileFormatVersion: 2
-guid: d633db7de5323b34c9f35087597fcb93
+guid: 10c606c0f91c2a0cb946d97da2b6b76f
 DefaultImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 118355
-  packageName: Polygonal's Low-Poly Particle Pack
-  packageVersion: 1.0
-  assetPath: Assets/Polygonal Particles/README.pdf
-  uploadId: 245436
