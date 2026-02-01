@@ -8,6 +8,7 @@ public class PlayerStateMachine
     public PlayerWalk _walk { get; private set; }
     public PlayerRun _run { get; private set; }
     public PlayerCrouchWalking _crouchWalking { get; private set; }
+    public PlayerDeath _death { get; private set; }
     
     private Player _player;
     private PlayerInput _playerInput;
@@ -19,6 +20,7 @@ public class PlayerStateMachine
         _walk = new PlayerWalk(this,playerMovement, player,playerAnimation,playerInput);
         _run = new PlayerRun(this, playerMovement, player, playerAnimation, playerInput);
         _crouchWalking = new PlayerCrouchWalking(this,playerMovement, player,playerAnimation,playerInput);
+        _death = new PlayerDeath(this,playerMovement, player,playerAnimation,playerInput);
         
         SwitchState(_idle);
     }

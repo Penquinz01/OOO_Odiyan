@@ -522,33 +522,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &484865114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-  m_PrefabInstance: {fileID: 2116420004}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &484865116
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484865114}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: acf1eda176d7ab4a2b238f89b6e7b0c7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &506968918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,90 +1596,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24f78d78b9a13ab588d966293377e7c4, type: 3}
---- !u!1001 &2116420004
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 10.84
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.9587
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_Name
-      value: Falling Back Death
-      objectReference: {fileID: 0}
-    - target: {fileID: 5465940246521907071, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 110
-      objectReference: {fileID: 0}
-    - target: {fileID: 5465940246521907071, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 110
-      objectReference: {fileID: 0}
-    - target: {fileID: 5465940246521907071, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 110
-      objectReference: {fileID: 0}
-    - target: {fileID: 5465940246521907071, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 5465940246521907071, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 18.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 5465940246521907071, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 484865116}
-  m_SourcePrefab: {fileID: 100100000, guid: d7cfa0e04a9e0134eb009c4e54a4f28b, type: 3}
 --- !u!1001 &5506890403334607826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1764,6 +1653,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
+--- !u!1001 &7314667557881578800
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5773796354341033042, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773796354341033042, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773796354341033042, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.9587
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773796354341033042, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773796354341033042, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773796354341033042, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773796354341033042, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773796354341033042, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773796354341033042, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773796354341033042, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587488197587046120, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
+      propertyPath: m_Name
+      value: Falling Back Death
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1785,4 +1731,4 @@ SceneRoots:
   - {fileID: 1559990364}
   - {fileID: 2103278820}
   - {fileID: 1666832531}
-  - {fileID: 2116420004}
+  - {fileID: 7314667557881578800}

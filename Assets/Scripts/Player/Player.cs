@@ -135,5 +135,11 @@ public class Player : MonoBehaviour
             
         }
     }
+
+    public void Die()
+    {
+        _playerStateMachine.SwitchState(_playerStateMachine._death);
+        
+    }
     
 }
