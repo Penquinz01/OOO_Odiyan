@@ -1,10 +1,14 @@
 using System;
 using UnityEngine;
+using TMPro;
 
 public class UiManager : MonoBehaviour
 {
     private Animator _animator;
     private MainControls _mainControls;
+    [SerializeField] private TextMeshProUGUI keyText;
+    [SerializeField] private string rightKey = "Right Key";
+    [SerializeField] private string wrongKey = "Wrong Key";
     private void Awake()
     {
         _animator = GetComponent<Animator>();
