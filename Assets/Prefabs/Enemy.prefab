@@ -161,9 +161,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   _speed: 5
   _damage: 10
-  _health: 100
+  _health: 90
   _patrolPoints: []
   _deathEffect: {fileID: 6096075060875083909, guid: a333689e56acccf269ae456597fb0ec6, type: 3}
+  _deathSpawnPoint: {fileID: 0}
 --- !u!95 &7298079078114519324
 Animator:
   serializedVersion: 7
