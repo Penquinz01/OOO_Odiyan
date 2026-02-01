@@ -12,6 +12,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private string _rightKey = "Right Key";
     [SerializeField] private string _wrongKey = "Wrong Key";
     [SerializeField] private Image _deathScreen;
+    [SerializeField] private Image _winScreen;
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -64,9 +65,20 @@ public class UiManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         _keyText.gameObject.SetActive(false);
     }
+    public IEnumerator ShowText(string message, float duration)
+    {
+        _keyText.gameObject.SetActive(true);
+        _keyText.text = message;
+        yield return new WaitForSeconds(duration);
+        _keyText.gameObject.SetActive(false);
+    }
     public void ShowDeathScreen()
     {
         _deathScreen.gameObject.SetActive(true);
+    }
+    public void ShowWinScreen()
+    {
+        _winScreen.gameObject.SetActive(true);
     }
     public void Destroy() => Destroy(gameObject);
 }

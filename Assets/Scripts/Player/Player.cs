@@ -170,11 +170,14 @@ public class Player : MonoBehaviour
         {
             if (hasKey)
             {
-                Debug.Log("You Win");
+                Debug.Log("You Win");  
+                UiManager.Instance.ShowWinScreen();  
+                //StartCoroutine(RestartLevelCoroutine(3f));
             }
             else
             {
                 Debug.Log("Door is Locked. Find the Key.");
+                StartCoroutine(UiManager.Instance.ShowText("Door is Locked. Find the Key.",2f));
             }
         }
     }
