@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     public bool _isBullNow { get; private set; } = false;
 
     private static readonly int TransformAnimationId = Animator.StringToHash("Transform");
+    private bool hasKey = false;
 
     public GameObject SmokeEffect
     {
@@ -133,6 +134,40 @@ public class Player : MonoBehaviour
                 _enemy.TakeDamage(100f);
             }
             
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Key"))
+        {
+            Key key = other.gameObject.GetComponent<Key>();
+            if (key != null)
+            {
+                if (key._isRightKey)
+                {
+                    //EventManager.InvokeRightKeyEvent();
+                    hasKey = true;
+                    Debug.Log("Right Key Collected");
+                }
+                else
+                {
+                    //EventManager.InvokeFalseKeyEvent();
+                    Debug.Log("Wrong Key Collected");
+                }
+                Destroy(other.gameObject);
+            }
+        }
+        if (other.gameObject.CompareTag("Door"))
+        {
+            if (hasKey)
+            {
+                Debug.Log("You Win");
+            }
+            else
+            {
+                Debug.Log("Door is Locked. Find the Key.");
+            }
         }
     }
 
