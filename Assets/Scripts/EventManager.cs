@@ -10,6 +10,8 @@ public class EventManager : MonoBehaviour
     public static event Action OnAttack;
     public static event Action OnSmoke;
 
+    public static event Action OnFindingWrongKey;
+    public static event Action OnFindingRightKey;
     void Awake()
     {
         if (Instance != null)
@@ -38,6 +40,16 @@ public class EventManager : MonoBehaviour
     public void InvokeSmokeEvent()
     {
         OnSmoke?.Invoke();
+    }
+
+    public void InvokeFalseKeyEvent()
+    {
+        OnFindingWrongKey?.Invoke();
+    }
+
+    public void InvokeRightKeyEvent()
+    {
+        OnFindingRightKey?.Invoke();
     }
     
 }
