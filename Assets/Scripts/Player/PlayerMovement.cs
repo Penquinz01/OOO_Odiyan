@@ -6,7 +6,7 @@ public class PlayerMovement
     private CharacterController _characterController;
     private Player _player;
     private PlayerInput _playerInput;
-    private float _speed;
+    public float _speed { get;private set; }
     private Vector3 _moveInput;
     private float _turnSpeed = 360f;
     private float _gravity;

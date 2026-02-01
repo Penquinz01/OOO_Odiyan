@@ -13,6 +13,7 @@ public class KeyManager : MonoBehaviour
         for (int i = 0;i < _keySpawnerLocation.Length;i++)
         {
             GameObject key = Instantiate(_keyPrefab, _keySpawnerLocation[i].position, Quaternion.identity);
+            key.transform.Rotate(0, 0,90);
             key.tag = "Key";
             Key keyScript = key.GetComponent<Key>();
             int k = Random.Range(0, 2);

@@ -122,5 +122,18 @@ public class Player : MonoBehaviour
     {
         _isBullNow = !_isBullNow;
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            if (!_isBullNow) return;
+            Enemy _enemy = other.gameObject.GetComponent<Enemy>();
+            if (_enemy != null)
+            {
+                _enemy.TakeDamage(100f);
+            }
+            
+        }
+    }
     
 }

@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : MonoBehaviour
 {
@@ -19,12 +18,14 @@ public class Enemy : MonoBehaviour
     private Animator _animator;
     private EnemyStateMachine _stateMachine;
     
+    [Header("Death")]
+    [SerializeField]private GameObject _deathEffect;
+    
     public float Damage => _damage;
     public float Health => _health;
 
     private void Awake()
     {
-        _controller = GetComponent<CharacterController>();
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
         
@@ -66,7 +67,19 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        Instantiate(_deathEffect, transform.position, Quaternion.identity);
         // Handle death (play animation, disable, destroy, etc.)
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (!Player.Instance._isBullNow)
+            {
+                return;
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@ public class Bull : MonoBehaviour
 {
     [SerializeField] private float _walkSpeed = 9f;
     [SerializeField] private float _runSpeed = 14f;
-    private BullStateMachine _stateMachine;
+    public BullStateMachine _stateMachine { get;private set; }
     [SerializeField] private Player _player;
     private PlayerMovement _playerMovement;
     [SerializeField] private float _timer = 1f;
@@ -60,5 +60,18 @@ public class Bull : MonoBehaviour
     {
         yield return new WaitForSeconds(_timer);
         gameObject.SetActive(false);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Enemy _enemy = other.gameObject.GetComponent<Enemy>();
+            if (_enemy != null)
+            {
+                _enemy.TakeDamage(100f);
+            }
+            
+        }
     }
 }
