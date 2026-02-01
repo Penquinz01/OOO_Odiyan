@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private GameObject _playerDeath;
     public static Player Instance;
     [SerializeField] private float _sprintSpeed = 8f;
     [SerializeField]private float crouchSpeed = 3f;
@@ -173,7 +174,8 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        _playerStateMachine.SwitchState(_playerStateMachine._death);
+        _playerDeath.SetActive(true);
+        Destroy(gameObject);
         
     }
     
