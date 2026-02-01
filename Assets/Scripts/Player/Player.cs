@@ -149,12 +149,14 @@ public class Player : MonoBehaviour
                 if (key._isRightKey)
                 {
                     //EventManager.InvokeRightKeyEvent();
+                    StartCoroutine(UiManager.Instance.ShowKeyText(true));
                     hasKey = true;
                     Debug.Log("Right Key Collected");
                 }
                 else
                 {
                     //EventManager.InvokeFalseKeyEvent();
+                    StartCoroutine(UiManager.Instance.ShowKeyText(false));
                     Debug.Log("Wrong Key Collected");
                 }
                 Destroy(other.gameObject);
