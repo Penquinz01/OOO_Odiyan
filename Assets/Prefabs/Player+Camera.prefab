@@ -1203,7 +1203,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1001 &6551705170293514384
 PrefabInstance:
@@ -2236,6 +2236,18 @@ PrefabInstance:
       value: -1.5050775
       objectReference: {fileID: 0}
     - target: {fileID: 3745503860055077438, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745503860055077438, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745503860055077438, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745503860055077438, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.13236
       objectReference: {fileID: 0}
@@ -2274,6 +2286,10 @@ PrefabInstance:
     - target: {fileID: 3745503860055077438, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745503860055077438, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4085155489600481412, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
       propertyPath: m_Name
@@ -2588,6 +2604,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7155524934428709940}
     - target: {fileID: 8153398201505396500, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
+      propertyPath: _gravity
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153398201505396500, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
       propertyPath: _runSound
       value: 
       objectReference: {fileID: 8300000, guid: 2936d5320da7f3b4e936d25feae79f98, type: 3}
@@ -2737,9 +2757,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: fc2da5891303a744f811b3d63b36c312, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2783,7 +2803,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
