@@ -93,9 +93,7 @@ public class EnemyAttacking : States
         float distanceToPlayer = Vector3.Distance(_enemy.transform.position, Player.Instance.transform.position);
         if (distanceToPlayer <= _attackRange)
         {
-            // Deal damage to player
-            // Player.Instance.TakeDamage(damage);
-            Debug.Log("Enemy attacked player!");
+            Player.Instance.Die(); // Deal 10 damage to player
         }
     }
 }
