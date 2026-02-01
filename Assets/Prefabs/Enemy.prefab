@@ -120,9 +120,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1338037710265036325}
   m_SourcePrefab: {fileID: 100100000, guid: a154a65a34cd15e4a999c0656cdb0455, type: 3}
---- !u!4 &1897397679328162155 stripped
+--- !u!4 &1609518150310712731 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5465940246521907071, guid: a154a65a34cd15e4a999c0656cdb0455, type: 3}
+  m_CorrespondingSourceObject: {fileID: -4046437356102605937, guid: a154a65a34cd15e4a999c0656cdb0455, type: 3}
   m_PrefabInstance: {fileID: 5876637395078772244}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &6723710703447788357 stripped
@@ -149,7 +149,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 3.41
-  m_BaseOffset: 1.65
+  m_BaseOffset: 1.26
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2230011592645974071
@@ -168,8 +168,8 @@ MonoBehaviour:
   _damage: 10
   _health: 90
   _patrolPoints: []
-  _deathEffect: {fileID: 6096075060875083909, guid: a333689e56acccf269ae456597fb0ec6, type: 3}
-  _deathSpawnPoint: {fileID: 1897397679328162155}
+  _deathEffect: {fileID: 6587488197587046120, guid: b9bc8e0e3a89519f8aaeb74e72f5da38, type: 3}
+  _deathSpawnPoint: {fileID: 1609518150310712731}
 --- !u!95 &7298079078114519324
 Animator:
   serializedVersion: 7
@@ -214,7 +214,7 @@ CapsuleCollider:
   m_Radius: 0.54
   m_Height: 3.24
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.36, z: 0}
 --- !u!54 &1338037710265036325
 Rigidbody:
   m_ObjectHideFlags: 0
