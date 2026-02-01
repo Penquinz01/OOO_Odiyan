@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip _walkSound;
     [SerializeField] private AudioClip _runSound;
     [SerializeField] private GameObject _SmokeEffect;
+    public bool _isBullNow { get; private set; } = false;
 
     private static readonly int TransformAnimationId = Animator.StringToHash("Transform");
 
@@ -81,6 +82,7 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
+        _isBullNow = false;
         Cursor.lockState = CursorLockMode.Locked;
         Instance = this;
         _playerInput = new PlayerInput();
@@ -115,6 +117,10 @@ public class Player : MonoBehaviour
     public void Transforming()
     {
         _playerTransformation.Transform();
+    }
+    public void ToggleBullState()
+    {
+        _isBullNow = !_isBullNow;
     }
     
 }

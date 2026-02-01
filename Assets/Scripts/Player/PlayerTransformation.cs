@@ -25,6 +25,7 @@ public class PlayerTransformation
 
     public void Transform()
     {
+        Player.Instance.ToggleBullState();
         _player.SmokeGenerate();
         if (_transformed)
         {

@@ -62,6 +62,10 @@ public class PlayerInput
 
     private void Transform(InputAction.CallbackContext cxt)
     {
+        if (Player.Instance._isBullNow)
+        {
+            return;
+        }
         EventManager.Instance.InvokeTransformEvent();
     }
     private void ToggleCrouch(InputAction.CallbackContext cxt)
