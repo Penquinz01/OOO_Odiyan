@@ -120,6 +120,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1338037710265036325}
   m_SourcePrefab: {fileID: 100100000, guid: a154a65a34cd15e4a999c0656cdb0455, type: 3}
+--- !u!4 &1897397679328162155 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5465940246521907071, guid: a154a65a34cd15e4a999c0656cdb0455, type: 3}
+  m_PrefabInstance: {fileID: 5876637395078772244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6723710703447788357 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a154a65a34cd15e4a999c0656cdb0455, type: 3}
@@ -164,7 +169,7 @@ MonoBehaviour:
   _health: 90
   _patrolPoints: []
   _deathEffect: {fileID: 6096075060875083909, guid: a333689e56acccf269ae456597fb0ec6, type: 3}
-  _deathSpawnPoint: {fileID: 0}
+  _deathSpawnPoint: {fileID: 1897397679328162155}
 --- !u!95 &7298079078114519324
 Animator:
   serializedVersion: 7

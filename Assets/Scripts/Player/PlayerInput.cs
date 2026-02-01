@@ -75,6 +75,10 @@ public class PlayerInput
 
     private void AttackTrigger(InputAction.CallbackContext cxt)
     {
+        if (!Player.Instance._isBullNow)
+        {
+            return;
+        }
         EventManager.Instance.InvokeOnAttackEvent();
     }
     
