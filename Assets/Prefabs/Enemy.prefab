@@ -177,6 +177,7 @@ MonoBehaviour:
   _damage: 10
   _health: 100
   _patrolPoints: []
+  _deathEffect: {fileID: 0}
 --- !u!95 &7298079078114519324
 Animator:
   serializedVersion: 7
