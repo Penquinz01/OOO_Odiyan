@@ -174,9 +174,9 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        UiManager.Instance.ShowDeathScreen();  
         _playerDeath.SetActive(true);
-        Destroy(gameObject);
-        
+        Destroy(gameObject);        
     }
     
 }

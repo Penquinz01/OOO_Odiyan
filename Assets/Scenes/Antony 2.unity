@@ -156598,26 +156598,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player+Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 1762212831659310838, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
-      propertyPath: _gravity
-      value: -40
-      objectReference: {fileID: 0}
-    - target: {fileID: 2838878826414311440, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2838878826414311440, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: fc2da5891303a744f811b3d63b36c312, type: 3}
-    - target: {fileID: 2838878826414311440, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3510760748414302642, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
-      propertyPath: Lens.FieldOfView
-      value: 70
-      objectReference: {fileID: 0}
     - target: {fileID: 6464797067627462793, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
       propertyPath: m_LocalPosition.x
       value: 36.3
@@ -156656,30 +156636,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6464797067627462793, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532647896135138268, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532647896135138268, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532647896135138268, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6532647896135138268, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773639158091714706, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
-      propertyPath: m_Constraints
-      value: 126
-      objectReference: {fileID: 0}
-    - target: {fileID: 6773639158091714706, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
-      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
