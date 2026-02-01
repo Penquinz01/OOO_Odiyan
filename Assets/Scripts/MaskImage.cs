@@ -1,30 +1,36 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
 public class MaskImage : MonoBehaviour
 {
     public Image uiImage;
-    public float blinkInterval = 0.5f;
-    public float totalDuration = 10f;
+    public float totalDuration = 10f;     
+    public float blinkStartTime = 7f;     
+    public float blinkInterval = 0.3f;   
 
     public void OnEnable()
     {
-        StartCoroutine(BlinkRoutine());
+        uiImage.enabled = true;
+        StartCoroutine(TimerRoutine());
     }
 
-    IEnumerator BlinkRoutine()
+    IEnumerator TimerRoutine()
     {
+        Debug.Log("Mask UI Triggered");
+        yield return new WaitForSeconds(blinkStartTime);
+
+        float blinkTime = totalDuration - blinkStartTime;
         float timer = 0f;
 
-        while (timer < totalDuration)
+        while (timer < blinkTime)
         {
             uiImage.enabled = !uiImage.enabled;
             yield return new WaitForSeconds(blinkInterval);
             timer += blinkInterval;
         }
-
-        // Ensure it's fully hidden at the end
+    
         uiImage.enabled = false;
     }
 }

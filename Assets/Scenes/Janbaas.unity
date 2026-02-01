@@ -682,7 +682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &558481305
 Animator:
   serializedVersion: 7
@@ -802,6 +802,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ffea1d314711376e88a7ad65ee4235c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  keyText: {fileID: 0}
+  rightKey: Right Key
+  wrongKey: Wrong Key
 --- !u!1 &634630637
 GameObject:
   m_ObjectHideFlags: 0
