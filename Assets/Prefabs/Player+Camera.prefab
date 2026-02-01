@@ -1793,7 +1793,7 @@ PrefabInstance:
     - target: {fileID: 8153398201505396500, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
       propertyPath: _SmokeEffect
       value: 
-      objectReference: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
+      objectReference: {fileID: 7761031033666763820, guid: 1eb833340b41fb444b576c4dced8d4dc, type: 3}
     - target: {fileID: 8153398201505396500, guid: 4dba6f71d77de6a44a0d654f627afcbf, type: 3}
       propertyPath: _audioSource
       value: 
