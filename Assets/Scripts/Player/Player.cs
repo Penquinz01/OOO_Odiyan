@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Collections;
 
 
 public class Player : MonoBehaviour
@@ -176,7 +177,14 @@ public class Player : MonoBehaviour
     {
         UiManager.Instance.ShowDeathScreen();  
         _playerDeath.SetActive(true);
-        Destroy(gameObject);        
+        //Destroy(gameObject);   
+        StartCoroutine(RestartLevelCoroutine(3f));
+    }
+
+    private IEnumerator RestartLevelCoroutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
     
 }
