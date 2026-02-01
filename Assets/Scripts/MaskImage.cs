@@ -10,7 +10,7 @@ public class MaskImage : MonoBehaviour
     public float blinkStartTime = 7f;     
     public float blinkInterval = 0.3f;   
 
-    public void OnEnable()
+    public void onUI()
     {
         uiImage.enabled = true;
         StartCoroutine(TimerRoutine());

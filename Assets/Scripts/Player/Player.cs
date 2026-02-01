@@ -118,7 +118,6 @@ public class Player : MonoBehaviour
     private void Transform()
     {
         _playerAnimation.ChangeAnimation(TransformAnimationId);
-        uiimg.OnEnable();
     }
 
     public void Transforming()
@@ -128,6 +127,7 @@ public class Player : MonoBehaviour
     public void ToggleBullState()
     {
         _isBullNow = !_isBullNow;
+        uiimg.onUI();
     }
     private void OnCollisionEnter(Collision other)
     {
