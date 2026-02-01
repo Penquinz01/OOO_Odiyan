@@ -224,7 +224,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60.000004
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -251,7 +251,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2534013, y: -0.00000002982814, z: 0.000000007813513, w: 0.9673613}
-  m_LocalPosition: {x: 0, y: 4.297, z: -4}
+  m_LocalPosition: {x: -0.026471995, y: 4.217844, z: -4.159592}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -571,6 +571,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1578833875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 925120388189333451, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
+  m_PrefabInstance: {fileID: 5506890403334607826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1578833879
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578833875}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.49
+  m_Height: 8.62
+  m_Direction: 2
+  m_Center: {x: 0, y: 2.76, z: 1.07}
 --- !u!1 &1724025363 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a154a65a34cd15e4a999c0656cdb0455, type: 3}
@@ -727,6 +755,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a154a65a34cd15e4a999c0656cdb0455, type: 3}
       propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a154a65a34cd15e4a999c0656cdb0455, type: 3}
+      propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -944,13 +976,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 925120388189333451, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1681181384972538509, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
       propertyPath: m_Name
       value: Player+Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 2078925289844675831, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6464797067627462793, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
       propertyPath: m_LocalPosition.x
@@ -995,7 +1027,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 925120388189333451, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1578833879}
   m_SourcePrefab: {fileID: 100100000, guid: fa83f15e7ba11dd8fa5dcf1df1003668, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
