@@ -35555,15 +35555,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Vazhath\xD8ttam."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b2707939a0e0d984e81b902ebcdde44b, type: 2}
-  m_sharedMaterial: {fileID: 8058694421772806103, guid: b2707939a0e0d984e81b902ebcdde44b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 63ab28824a52839419d7ab40f7cd4186, type: 2}
+  m_sharedMaterial: {fileID: 4936239849232177313, guid: 63ab28824a52839419d7ab40f7cd4186, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290306047
-  m_fontColor: {r: 1, g: 0.87605566, b: 0.7201257, a: 1}
+    rgba: 4290700031
+  m_fontColor: {r: 1, g: 0.88519794, b: 0.7452829, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -92663,8 +92663,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: press any key to play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b2707939a0e0d984e81b902ebcdde44b, type: 2}
-  m_sharedMaterial: {fileID: 8058694421772806103, guid: b2707939a0e0d984e81b902ebcdde44b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 63ab28824a52839419d7ab40f7cd4186, type: 2}
+  m_sharedMaterial: {fileID: 4936239849232177313, guid: 63ab28824a52839419d7ab40f7cd4186, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -92688,8 +92688,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

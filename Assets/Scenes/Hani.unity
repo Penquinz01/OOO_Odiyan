@@ -392,9 +392,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ffea1d314711376e88a7ad65ee4235c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiManager
-  keyText: {fileID: 0}
-  rightKey: Right Key
-  wrongKey: Wrong Key
+  _keyText: {fileID: 2090732420}
+  _rightKey: Right Key
+  _wrongKey: Wrong Key
   _deathScreen: {fileID: 2024057140}
 --- !u!4 &46504957
 Transform:
@@ -1190,6 +1190,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &2090732420 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3835292055183828048, guid: 73541016e7549a64d834af5c81b648ef, type: 3}
+  m_PrefabInstance: {fileID: 1436791130581694298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1436791130581694298
 PrefabInstance:
   m_ObjectHideFlags: 0
